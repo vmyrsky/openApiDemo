@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  helloservice:
+#    depends_on:
+#      - <serviceName>
+    build:
+      context: .
+	  dockerfile: Dockerfile_dev
+      image: my-demo-app
+    ports:
+      - 8080:8080
+    environment:
+      - SERVER_PORT=8080
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100k"
+        max-file: "2"
+    container_name: my-demo-app-container-dev
+    command: ./mvnw spring-boot:run"
+#  <serviceName>
