@@ -1,0 +1,110 @@
+{
+	"openapi": "3.0.2",
+	"info": {
+		"title": "OAD to API",
+		"version": "0.1.0",
+		"description": "This is an example OAD."
+	},
+	"servers": [
+		{
+			"url": "https://api.server.test/v1"
+		}
+	],
+	"paths": {
+	"/items": {
+			"get": {
+				"description": "Returns id and name of all items",
+				"responses": {
+					"200": {
+						"description": "Items were found.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "array",
+									"items": {
+									     "$ref": "#/components/schemas/summaryItem"
+									 }
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/item/{id}": {
+			"parameters": [
+				{
+					"name": "id",
+					"in": "path",
+					"description": "The id of a specific item",
+					"required": true,
+					"schema": {
+						"type": "integer",
+						"format": "int64",
+						"minimum": 1
+					},
+					"example": "12345"
+				}
+			],
+			"get": {
+				"description": "Returns details of a specific item",
+				"responses": {
+					"200": {
+						"description": "The specific item was found.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"$ref": "#/components/schemas/item"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"GeneralError": {
+				"type": "object",
+				"properties": {
+					"code": {
+						"type": "integer",
+						"format": "int32"
+					},
+					"message": {
+						"type": "string"
+					}
+				}
+			},
+			"summaryItem": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "integer",
+						"format": "int64"
+					},
+					"name": {
+						"type": "string"
+					}
+				}
+			},
+			"item": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "integer",
+						"format": "int64"
+					},
+					"name": {
+						"type": "string"
+					},
+					"details": {
+					    "type": "string"
+					}
+				}
+			}
+		}
+	}
+}
