@@ -1,0 +1,110 @@
+{
+	"openapi": "3.0.2",
+	"info": {
+		"title": "OAD to API",
+		"version": "0.1.0",
+		"description": "This is an example OAD for creating API stubs for PartService."
+	},
+	"servers": [
+		{
+			"url": "https://api.server.test/v1"
+		}
+	],
+	"paths": {
+		"/parts": {
+			"get": {
+				"description": "Returns id and name of all parts",
+				"responses": {
+					"200": {
+						"description": "Parts were found.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "array",
+									"items": {
+									     "$ref": "#/components/schemas/summaryPart"
+									 }
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/part/{id}": {
+			"parameters": [
+				{
+					"name": "id",
+					"in": "path",
+					"description": "The id of a specific part",
+					"required": true,
+					"schema": {
+						"type": "integer",
+						"format": "int64",
+						"minimum": 1
+					},
+					"example": "12345"
+				}
+			],
+			"get": {
+				"description": "Returns details of a specific part",
+				"responses": {
+					"200": {
+						"description": "The specific part was found.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"$ref": "#/components/schemas/part"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"GeneralError": {
+				"type": "object",
+				"properties": {
+					"code": {
+						"type": "integer",
+						"format": "int32"
+					},
+					"message": {
+						"type": "string"
+					}
+				}
+			},
+			"summaryPart": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "integer",
+						"format": "int64"
+					},
+					"name": {
+						"type": "string"
+					}
+				}
+			},
+			"part": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "integer",
+						"format": "int64"
+					},
+					"name": {
+						"type": "string"
+					},
+					"details": {
+					    "type": "string"
+					}
+				}
+			}
+		}
+	}
+}

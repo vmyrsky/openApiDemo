@@ -7,7 +7,7 @@
 	<version>0.1.0</version>
 	<packaging>pom</packaging>
 	<name>productService</name>
-	<description>A set of some stuff</description>
+	<description>A demo project using OpenAPI</description>
 	<properties>
 		<java.version>21</java.version>
 		<encoding>UTF-8</encoding>
@@ -17,20 +17,20 @@
 		<project.reporting.outputEncoding>${encoding}</project.reporting.outputEncoding>
 	</properties>
 	<modules>
-		<module>itemService</module>
+		<module>partService</module>
 		<!--        <module>gadgetService</module>-->
 	</modules>
 	<profiles>
 		<profile>
 			<id>generate</id>
 			<modules>
-				<module>itemService</module>
+				<module>partService</module>
 			</modules>
 		</profile>
 		<profile>
 			<id>package</id>
 			<modules>
-				<module>itemService</module>
+				<module>partService</module>
 			</modules>
 		</profile>
 	</profiles>

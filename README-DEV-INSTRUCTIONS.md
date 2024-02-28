@@ -18,7 +18,7 @@
 - All projects must also be locally runnable **without** docker.
     * Important to avoid overhead from docker when developing them.
     * Locally running projects may use other services dockerized (where applicable) so that not all must be started independently.
-- The docker-compose at the ItemService root must contain reference to all projects.
+- The docker-compose at the partService root must contain reference to all projects.
      * For compiling all containers at one go.
      * To deploy all containers at once or just a selected set of them.
 
