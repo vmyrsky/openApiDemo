@@ -1,20 +1,14 @@
-package com.org.product.services;
+package com.org.product.generic.service;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import org.springframework.stereotype.Service;
+import com.org.product.generic.model.Identifiable;
 
-import com.org.product.entity.Identifiable;
-
-import jakarta.annotation.PostConstruct;
-
-@Service
 public class GenericService<T extends Identifiable> {
     private Map<Long, T> surrogateOfDB;
 
-    @PostConstruct
-    private void init() {
+    public GenericService() {
         this.surrogateOfDB = new HashMap<Long, T>();
     }
 

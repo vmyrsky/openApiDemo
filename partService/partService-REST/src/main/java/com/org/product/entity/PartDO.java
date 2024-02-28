@@ -1,6 +1,7 @@
 package com.org.product.entity;
 
 import com.org.product.generated.model.Part;
+import com.org.product.generic.model.Identifiable;
 
 public class PartDO extends Part implements Identifiable {
 

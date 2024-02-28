@@ -17,6 +17,7 @@
 		<project.reporting.outputEncoding>${encoding}</project.reporting.outputEncoding>
 	</properties>
 	<modules>
+		<module>generic</module>
 		<module>partService</module>
 		<!--        <module>gadgetService</module>-->
 	</modules>

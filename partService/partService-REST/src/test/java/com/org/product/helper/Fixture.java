@@ -8,8 +8,8 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import com.org.product.entity.Identifiable;
-import com.org.product.services.GenericService;
+import com.org.product.generic.model.Identifiable;
+import com.org.product.generic.service.GenericService;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;

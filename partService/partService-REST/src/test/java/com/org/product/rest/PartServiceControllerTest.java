@@ -21,8 +21,8 @@ import org.springframework.util.ObjectUtils;
 
 import com.org.product.entity.PartDO;
 import com.org.product.generated.model.Part;
+import com.org.product.generic.service.GenericService;
 import com.org.product.helper.TestHelper;
-import com.org.product.services.GenericService;
 
 @SpringBootTest
 @AutoConfigureMockMvc

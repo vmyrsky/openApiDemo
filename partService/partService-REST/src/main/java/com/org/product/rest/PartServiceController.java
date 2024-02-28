@@ -15,7 +15,7 @@ import com.org.product.generated.model.Part;
 import com.org.product.generated.model.SummaryPart;
 import com.org.product.generated.rest.PartApi;
 import com.org.product.generated.rest.PartsApi;
-import com.org.product.services.GenericService;
+import com.org.product.generic.service.GenericService;
 
 /**
  * This class implements the item APIs generated from the OpenAPI document.
@@ -24,7 +24,7 @@ import com.org.product.services.GenericService;
 public class PartServiceController implements PartApi, PartsApi {
 
     @Inject
-    private GenericService<PartDO> itemService;
+    private GenericService<PartDO> partService;
 
     @Override
     public Optional<NativeWebRequest> getRequest() {
@@ -33,7 +33,7 @@ public class PartServiceController implements PartApi, PartsApi {
 
     @Override
     public ResponseEntity<Part> partIdGet(Long id) {
-        var item = this.itemService.getEntity(id);
+        var item = this.partService.getEntity(id);
         return new ResponseEntity<Part>(item, HttpStatus.OK);
     }
 

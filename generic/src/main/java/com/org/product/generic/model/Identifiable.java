@@ -1,4 +1,4 @@
-package com.org.product.entity;
+package com.org.product.generic.model;
 
 /**
  * Simple interface to set common id handling requirement for identifiable classes.

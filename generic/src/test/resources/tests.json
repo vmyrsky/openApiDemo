@@ -1,0 +1,24 @@
+[
+	{
+		"id": "id1",
+		"flag": true,
+		"number": 123,
+		"decimal": 23.45,
+		"date": "2023-01-30",
+		"time": "13:52:15",
+		"zonedDateTime": "2023-01-30T13:52:15-0600",
+		"ignored": "not read",
+		"named": "original json field name is 'named'"
+	},
+	{
+		"id": "id2",
+		"flag": true,
+		"number": 0,
+		"decimal": 0,
+		"date": "2023-01-30",
+		"time": "13:52:15",
+		"zonedDateTime": "2023-01-30T13:52:15-0600",
+		"ignored": "",
+		"named": ""
+	}
+]

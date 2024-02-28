@@ -3,6 +3,8 @@ package com.org.product.entity;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.org.product.generic.model.Identifiable;
+
 public class GadgetDO implements Identifiable {
     private Long id;
     private Set<PartDO> items;

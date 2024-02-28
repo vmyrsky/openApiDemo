@@ -1,4 +1,4 @@
-package com.org.product.utils;
+package com.org.product.generic.processor;
 
 import java.io.IOException;
 import java.lang.reflect.Array;
